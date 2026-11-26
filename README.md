@@ -1,54 +1,48 @@
-# Projet Tailwind CSS
-
-Petit projet d'apprentissage pour découvrir **Tailwind CSS**.
+# TP Tailwind CSS
 
 ## Prérequis
 
-Avant de commencer, assurez-vous d'avoir installé :
-
-- [Node.js](https://nodejs.org/)
-- `npm` (installé avec Node.js)
+- [Node.js](https://nodejs.org/) (avec `npm`)
 
 ## Installation
 
-Depuis la racine du projet, installez les dépendances avec :
+Depuis la racine du projet :
 
 ```bash
 npm install
 ```
 
-## Lancer le projet
+## Lancer et voir le projet
 
-Le projet utilise Tailwind pour générer le fichier CSS dans `dist/style.css`.
+Il faut deux terminaux ouverts à la racine du projet.
 
-### 1. Générer le CSS en mode développement
-
-Dans un premier terminal, lancez :
+**1. Compiler le CSS avec Tailwind (terminal 1)**
 
 ```bash
-npm run dev
+npm run tailwind
 ```
 
-Cette commande surveille les modifications du fichier `assets/styles/main.css` et régénère automatiquement
-`dist/style.css`.
+Cette commande génère `dist/style.css` à partir de `assets/styles/main.css`, puis surveille les fichiers : le CSS est
+recompilé à chaque modification de `index.html` ou de `main.css`. Laissez ce terminal ouvert.
 
-### 2. Lancer un serveur local
-
-Dans un second terminal, lancez :
+**2. Lancer le serveur local (terminal 2)**
 
 ```bash
 npm run serve
 ```
 
-Ensuite, ouvrez votre navigateur à l'adresse affichée dans le terminal (généralement `http://localhost:3000`).
+Ouvrez ensuite l'adresse affichée dans le terminal (en général <http://localhost:3000>).
 
-## Structure utile
+> Pour un simple aperçu sans serveur, vous pouvez aussi ouvrir `index.html` directement dans le navigateur, à
+> condition que `dist/style.css` ait déjà été généré.
 
-- `assets/styles/main.css` : fichier source Tailwind
-- `dist/style.css` : fichier CSS généré
-- `index.html` : page d'exemple
+## Structure
 
-## Remarque
+- `index.html` : la page portfolio
+- `assets/styles/main.css` : source Tailwind, avec les composants réutilisés (`btn`, `tag`, `project-card`…)
+- `dist/style.css` : CSS généré par Tailwind (ne pas modifier à la main)
 
-Si le style ne s'affiche pas, vérifiez que la commande `npm run dev` est bien en cours d'exécution pour générer
-`dist/style.css`.
+## En cas de problème
+
+Si la page s'affiche sans style, vérifiez que `npm run tailwind` tourne bien dans un terminal et que
+`dist/style.css` existe.
